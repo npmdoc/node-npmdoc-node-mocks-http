@@ -1,0 +1,1348 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/howardabrams/node-mocks-http"
+
+    >node-mocks-http (v1.6.1)</a>
+</h1>
+<h4>Mock 'http' objects for testing Express routing functions</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-mocks-http">module node-mocks-http</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-mocks-http.createMocks">
+            function <span class="apidocSignatureSpan">node-mocks-http.</span>createMocks
+            <span class="apidocSignatureSpan">(reqOpts, resOpts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-mocks-http.createRequest">
+            function <span class="apidocSignatureSpan">node-mocks-http.</span>createRequest
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-mocks-http.createResponse">
+            function <span class="apidocSignatureSpan">node-mocks-http.</span>createResponse
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-mocks-http.express">
+            function <span class="apidocSignatureSpan">node-mocks-http.</span>express
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-mocks-http.mockEventEmitter">
+            function <span class="apidocSignatureSpan">node-mocks-http.</span>mockEventEmitter
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-mocks-http.mockWritableStream">
+            function <span class="apidocSignatureSpan">node-mocks-http.</span>mockWritableStream
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-mocks-http.</span>mockEventEmitter.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-mocks-http.</span>mockRequest</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-mocks-http.</span>mockResponse</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-mocks-http.</span>mockWritableStream.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-mocks-http.mockEventEmitter">module node-mocks-http.mockEventEmitter</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-mocks-http.mockEventEmitter.mockEventEmitter">
+            function <span class="apidocSignatureSpan">node-mocks-http.</span>mockEventEmitter
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-mocks-http.mockEventEmitter.prototype">module node-mocks-http.mockEventEmitter.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-mocks-http.mockEventEmitter.prototype.addListener">
+            function <span class="apidocSignatureSpan">node-mocks-http.mockEventEmitter.prototype.</span>addListener
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-mocks-http.mockEventEmitter.prototype.emit">
+            function <span class="apidocSignatureSpan">node-mocks-http.mockEventEmitter.prototype.</span>emit
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-mocks-http.mockEventEmitter.prototype.listeners">
+            function <span class="apidocSignatureSpan">node-mocks-http.mockEventEmitter.prototype.</span>listeners
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-mocks-http.mockEventEmitter.prototype.on">
+            function <span class="apidocSignatureSpan">node-mocks-http.mockEventEmitter.prototype.</span>on
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-mocks-http.mockEventEmitter.prototype.once">
+            function <span class="apidocSignatureSpan">node-mocks-http.mockEventEmitter.prototype.</span>once
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-mocks-http.mockEventEmitter.prototype.prependListener">
+            function <span class="apidocSignatureSpan">node-mocks-http.mockEventEmitter.prototype.</span>prependListener
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-mocks-http.mockEventEmitter.prototype.removeAllListeners">
+            function <span class="apidocSignatureSpan">node-mocks-http.mockEventEmitter.prototype.</span>removeAllListeners
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-mocks-http.mockEventEmitter.prototype.removeListener">
+            function <span class="apidocSignatureSpan">node-mocks-http.mockEventEmitter.prototype.</span>removeListener
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-mocks-http.mockEventEmitter.prototype.setMaxListeners">
+            function <span class="apidocSignatureSpan">node-mocks-http.mockEventEmitter.prototype.</span>setMaxListeners
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-mocks-http.mockRequest">module node-mocks-http.mockRequest</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-mocks-http.mockRequest.createRequest">
+            function <span class="apidocSignatureSpan">node-mocks-http.mockRequest.</span>createRequest
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-mocks-http.mockResponse">module node-mocks-http.mockResponse</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-mocks-http.mockResponse.createResponse">
+            function <span class="apidocSignatureSpan">node-mocks-http.mockResponse.</span>createResponse
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-mocks-http.mockWritableStream">module node-mocks-http.mockWritableStream</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">node-mocks-http.mockWritableStream.</span>writable</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-mocks-http.mockWritableStream.mockWritableStream">
+            function <span class="apidocSignatureSpan">node-mocks-http.</span>mockWritableStream
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-mocks-http.mockWritableStream.prototype">module node-mocks-http.mockWritableStream.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-mocks-http.mockWritableStream.prototype.destroy">
+            function <span class="apidocSignatureSpan">node-mocks-http.mockWritableStream.prototype.</span>destroy
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-mocks-http.mockWritableStream.prototype.destroySoon">
+            function <span class="apidocSignatureSpan">node-mocks-http.mockWritableStream.prototype.</span>destroySoon
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-mocks-http.mockWritableStream.prototype.end">
+            function <span class="apidocSignatureSpan">node-mocks-http.mockWritableStream.prototype.</span>end
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-mocks-http" id="apidoc.module.node-mocks-http">module node-mocks-http</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-mocks-http.createMocks" id="apidoc.element.node-mocks-http.createMocks">
+        function <span class="apidocSignatureSpan">node-mocks-http.</span>createMocks
+        <span class="apidocSignatureSpan">(reqOpts, resOpts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createMocks = function (reqOpts, resOpts) {
+    var req = request.createRequest(reqOpts);
+    var res = response.createResponse(Object.assign({}, resOpts, { req: req }));
+
+    return { req: req, res: res };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      assert.equal(...);
+      done();
+    });
+  });
+// ...
+```
+
+### .<span class="apidocCodeKeywordSpan">createMocks</span>()
+
+```js
+httpMocks.createMocks(reqOptions, resOptions)
+```
+
+Merges `createRequest` and `createResponse`. Passes given options object to each
+constructor. Returns an object with properties `req` and `res`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-mocks-http.createRequest" id="apidoc.element.node-mocks-http.createRequest">
+        function <span class="apidocSignatureSpan">node-mocks-http.</span>createRequest
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createRequest(options) {
+
+    if (!options) {
+        options = {};
+    }
+
+    if (options.eventEmitter) {
+        EventEmitter = options.eventEmitter;
+    }
+
+    // create mockRequest
+    var mockRequest = Object.create(EventEmitter.prototype);
+    EventEmitter.call(mockRequest);
+
+    mockRequest.method = options.method ? options.method : &#x27;GET&#x27;;
+    mockRequest.url = options.url || options.path || &#x27;&#x27;;
+    mockRequest.originalUrl = options.originalUrl || mockRequest.url;
+    mockRequest.path = options.path ||
+        ((options.url ? url.parse(options.url).pathname : &#x27;&#x27;));
+    mockRequest.params = options.params ? options.params : {};
+    if (options.session) {
+        mockRequest.session = options.session;
+    }
+    mockRequest.cookies = options.cookies ? options.cookies : {};
+    if (options.signedCookies) {
+        mockRequest.signedCookies = options.signedCookies;
+    }
+    mockRequest.headers = options.headers ? convertKeysToLowerCase(options.headers) : {};
+    mockRequest.body = options.body ? options.body : {};
+    mockRequest.query = options.query ? options.query : {};
+    mockRequest.files = options.files ? options.files : {};
+
+    //parse query string from url to object
+    if (Object.keys(mockRequest.query).length === 0) {
+        mockRequest.query = require(&#x27;querystring&#x27;).parse(mockRequest.url.split(&#x27;?&#x27;)[1]);
+
+        if (!mockRequest.query.hasOwnProperty) {
+            Object.defineProperty(
+                mockRequest.query,
+                &#x27;hasOwnProperty&#x27;,
+                {
+                    enumerable: false,
+                    value: Object.hasOwnProperty.bind(mockRequest.query)
+                }
+            );
+        }
+    }
+
+    // attach any other provided objects into the request for more advanced testing
+    for (var n in options) {
+        if (standardRequestOptions.indexOf(n) === -1) {
+            mockRequest[n] = options[n];
+        }
+    }
+
+<span class="apidocCodeCommentSpan">    /**
+     * Return request header.
+     *
+     * The `Referrer` header field is special-cased,
+     * both `Referrer` and `Referer` are interchangeable.
+     *
+     * Examples:
+     *
+     *     mockRequest.get(&#x27;Content-Type&#x27;);
+     *     // =&#x3e; &#x22;text/plain&#x22;
+     *
+     *     mockRequest.get(&#x27;content-type&#x27;);
+     *     // =&#x3e; &#x22;text/plain&#x22;
+     *
+     *     mockRequest.get(&#x27;Something&#x27;);
+     *     // =&#x3e; undefined
+     *
+     * Aliased as `mockRequest.header()`.
+     *
+     * @param {String} name
+     * @return {String}
+     * @api public
+     */
+</span>
+    mockRequest.get =
+    mockRequest.header = function(name) {
+        name = name.toLowerCase();
+        switch (name) {
+            case &#x27;referer&#x27;:
+            case &#x27;referrer&#x27;:
+                return mockRequest.headers.referrer || mockRequest.headers.referer;
+            default:
+                return mockRequest.headers[name];
+        }
+    };
+
+    /**
+     * Function: is
+     *
+     *   Checks for matching content types in the content-type header.
+     *   Requires a request body, identified by transfer-encoding or content-length headers
+     *
+     * Examples:
+     *
+     *     mockRequest.headers[&#x27;content-type&#x27;] = &#x27;text/html&#x27;;
+     *     mockRequest.headers[&#x27;transfer-encoding&#x27;] = &#x27;chunked&#x27;;
+     *     mockRequest.headers[&#x27;content-length&#x27;] = &#x27;100&#x27;;
+     *
+     *     mockRequest.is(&#x27;html&#x27;);
+     *     // =&#x3e; &#x22;html&#x22;
+     *
+     *     mockRequest.is(&#x27;json&#x27;);
+     *     // =&#x3e; false
+     *
+     *     mockRequest.is([&#x27;json&#x27;, &#x27;html&#x27;, &#x27;text&#x27;]);
+     *     // =&#x3e; &#x22;html&#x22;
+     *
+     * @param {String|String[]} types content type or array of types to match
+     * @return {String|false|null} Matching content type as string, false if no match, null if request has no body.
+     * @api public
+     */
+    mockRequest.is = function(types) {
+        if (!Array.isArray(types)) {
+            types = [].slice.call(arguments);
+        }
+        return typeis(mockRequest, types);
+    };
+
+    /**
+     * Function: accepts
+     *
+     *   Checks for matching content types in the Accept header.
+     *
+     * Examples:
+     *
+     *     mockRequest.headers[&#x27;accept&#x27;] = &#x27;application/json&#x27;
+     *
+     *     mockRequest.accepts(&#x27;j ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+You can easily test the `routeHandler` function with some code like
+this using the testing framework of your choice:
+
+```js
+exports[&#x27;routeHandler - Simple testing&#x27;] = function(test) {
+
+var request  = httpMocks.<span class="apidocCodeKeywordSpan">createRequest</span>({
+    method: &#x27;GET&#x27;,
+    url: &#x27;/user/42&#x27;,
+    params: {
+      id: 42
+    }
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-mocks-http.createResponse" id="apidoc.element.node-mocks-http.createResponse">
+        function <span class="apidocSignatureSpan">node-mocks-http.</span>createResponse
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createResponse(options) {
+
+    if (!options) {
+        options = {};
+    }
+
+    var _endCalled = false;
+    var _data = &#x27;&#x27;;
+    var _encoding = options.encoding;
+
+    var _redirectUrl = &#x27;&#x27;;
+    var _renderView = &#x27;&#x27;;
+    var _renderData = {};
+
+    if (options.writableStream) {
+        WritableStream = options.writableStream;
+    }
+    if (options.eventEmitter) {
+        EventEmitter = options.eventEmitter;
+    }
+    var writableStream = new WritableStream();
+
+    var mockRequest = options.req;
+    // create mockResponse
+
+    var mockResponse = Object.create(EventEmitter.prototype);
+    EventEmitter.call(mockResponse);
+
+    mockResponse._headers = {};
+
+    mockResponse.cookies = {};
+    mockResponse.finished = false;
+    mockResponse.headersSent = false;
+    mockResponse.statusCode = 200;
+    mockResponse.statusMessage = &#x27;OK&#x27;;
+
+    mockResponse.cookie = function(name, value, opt) {
+
+        mockResponse.cookies[name] = {
+            value: value,
+            options: opt
+        };
+
+        return this;
+    };
+
+    mockResponse.clearCookie = function(name) {
+        delete mockResponse.cookies[name];
+        return this;
+    };
+
+    mockResponse.status = function(code) {
+        mockResponse.statusCode = code;
+        return this;
+    };
+
+<span class="apidocCodeCommentSpan">    /**
+     * Function: writeHead
+     *
+     *  The &#x27;writeHead&#x27; function from node&#x27;s HTTP API.
+     *
+     * Parameters:
+     *
+     *  statusCode - A number to send as a the HTTP status
+     *  headers    - An object of properties that will be used for
+     *               the HTTP headers.
+     */
+</span>    mockResponse.writeHead = function(statusCode, statusMessage, headers) {
+
+        if (_endCalled) {
+            throw &#x27;The end() method has already been called.&#x27;;
+        }
+
+        if (mockResponse.headersSent) {
+            // Node docs: &#x22;This method must only be called once on a message&#x22;
+            // but it doesn&#x27;t error if you do call it after first chunk of body is sent
+            // so we shouldn&#x27;t throw here either (although it&#x27;s a bug in the code).
+            // We return without updating since in real life it&#x27;s just possible the double call didn&#x27;t
+            // completely corrupt the response (for example not using chunked encoding due to HTTP/1.0 client)
+            // and in this case the client will see the _original_ headers.
+            return;
+        }
+
+        mockResponse.statusCode = statusCode;
+
+        // resolve statusMessage and headers as optional
+        if (Object.prototype.toString.call(statusMessage) === &#x27;[object Object]&#x27;) {
+            headers = statusMessage;
+            statusMessage = null;
+        }
+
+        if (statusMessage) {
+            mockResponse.statusMessage = statusMessage;
+        }
+
+        // The headers specified earlier (been set with `mockResponse.setHeader`)
+        // should not be overwritten but be merged with the headers
+        // passed into `mockResponse.writeHead`.
+        if (headers) {
+            Object.assign(mockResponse._headers, headers);
+        }
+
+    };
+
+    /**
+     *  The &#x27;send&#x27; function from restify&#x27;s Response API that returns data
+     *  to the client. Can be called multiple times.
+     *
+     *  @see http://mcavage.me/node-restify/#response-api
+     *
+     * @param data The data to return. Must be a string.
+     */
+    mockResponse.send = function(a, b, c) {
+
+        var _formatData = function(data) {
+
+            if (typeof data === &#x27;object&#x27;) {
+
+                if (data.statusCode) {
+                    mockResponse.statusCode = data.statusCode;
+                } else if (data.httpCode) {
+                    mockResponse.statusCode = data.httpCode;
+                }
+
+                if (data.body) {
+                    _data = data.body;
+                } else {
+                    _data = data;
+                }
+
+            } else {
+                _data += data;
+            }
+
+        };
+
+        switch (arguments.length) {
+            case 1:
+                if (typeof a === &#x27;number&#x27;) {
+                    mockResponse.statusCode = a;
+                } else {
+                    _formatData(a); ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    method: &#x27;GET&#x27;,
+    url: &#x27;/user/42&#x27;,
+    params: {
+      id: 42
+    }
+});
+
+var response = httpMocks.<span class="apidocCodeKeywordSpan">createResponse</span>();
+
+routeHandler(request, response);
+
+var data = JSON.parse( response._getData() );
+test.equal(&#x22;Bob Dog&#x22;, data.name);
+test.equal(42, data.age);
+test.equal(&#x22;bob@dog.com&#x22;, data.email);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-mocks-http.express" id="apidoc.element.node-mocks-http.express">
+        function <span class="apidocSignatureSpan">node-mocks-http.</span>express
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createApplication() {
+    var app = function() {};
+
+    mixin(app, EventEmitter.prototype, false);
+    mixin(app, application, false);
+
+    app.request = {
+        __proto__: request,
+        app: app
+    };
+    app.response = {
+        __proto__: response.createResponse(),
+        app: app
+    };
+    app.init();
+    return app;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-mocks-http.mockEventEmitter" id="apidoc.element.node-mocks-http.mockEventEmitter">
+        function <span class="apidocSignatureSpan">node-mocks-http.</span>mockEventEmitter
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-mocks-http.mockWritableStream" id="apidoc.element.node-mocks-http.mockWritableStream">
+        function <span class="apidocSignatureSpan">node-mocks-http.</span>mockWritableStream
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function WritableStream() {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-mocks-http.mockEventEmitter" id="apidoc.module.node-mocks-http.mockEventEmitter">module node-mocks-http.mockEventEmitter</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-mocks-http.mockEventEmitter.mockEventEmitter" id="apidoc.element.node-mocks-http.mockEventEmitter.mockEventEmitter">
+        function <span class="apidocSignatureSpan">node-mocks-http.</span>mockEventEmitter
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-mocks-http.mockEventEmitter.prototype" id="apidoc.module.node-mocks-http.mockEventEmitter.prototype">module node-mocks-http.mockEventEmitter.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-mocks-http.mockEventEmitter.prototype.addListener" id="apidoc.element.node-mocks-http.mockEventEmitter.prototype.addListener">
+        function <span class="apidocSignatureSpan">node-mocks-http.mockEventEmitter.prototype.</span>addListener
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addListener = function () {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-mocks-http.mockEventEmitter.prototype.emit" id="apidoc.element.node-mocks-http.mockEventEmitter.prototype.emit">
+        function <span class="apidocSignatureSpan">node-mocks-http.mockEventEmitter.prototype.</span>emit
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">emit = function () {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+        default:
+            break;
+    }
+
+    mockResponse.headersSent = true;
+
+    mockResponse.<span class="apidocCodeKeywordSpan">emit</span>(&#x27;send&#x27;);
+    mockResponse.end();
+
+};
+
+/**
+ * Send given HTTP status code.
+ *
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-mocks-http.mockEventEmitter.prototype.listeners" id="apidoc.element.node-mocks-http.mockEventEmitter.prototype.listeners">
+        function <span class="apidocSignatureSpan">node-mocks-http.mockEventEmitter.prototype.</span>listeners
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">listeners = function () {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-mocks-http.mockEventEmitter.prototype.on" id="apidoc.element.node-mocks-http.mockEventEmitter.prototype.on">
+        function <span class="apidocSignatureSpan">node-mocks-http.mockEventEmitter.prototype.</span>on
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">on = function () {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var httpMocks = require(&#x27;node-mocks-http&#x27;);
+var res = httpMocks.createResponse({
+  eventEmitter: require(&#x27;events&#x27;).EventEmitter
+});
+
+// ...
+  it(&#x27;should do something&#x27;, function(done) {
+    res.<span class="apidocCodeKeywordSpan">on</span>(&#x27;end&#x27;, function() {
+      assert.equal(...);
+      done();
+    });
+  });
+// ...
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-mocks-http.mockEventEmitter.prototype.once" id="apidoc.element.node-mocks-http.mockEventEmitter.prototype.once">
+        function <span class="apidocSignatureSpan">node-mocks-http.mockEventEmitter.prototype.</span>once
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">once = function () {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-mocks-http.mockEventEmitter.prototype.prependListener" id="apidoc.element.node-mocks-http.mockEventEmitter.prototype.prependListener">
+        function <span class="apidocSignatureSpan">node-mocks-http.mockEventEmitter.prototype.</span>prependListener
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">prependListener = function () {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-mocks-http.mockEventEmitter.prototype.removeAllListeners" id="apidoc.element.node-mocks-http.mockEventEmitter.prototype.removeAllListeners">
+        function <span class="apidocSignatureSpan">node-mocks-http.mockEventEmitter.prototype.</span>removeAllListeners
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeAllListeners = function () {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-mocks-http.mockEventEmitter.prototype.removeListener" id="apidoc.element.node-mocks-http.mockEventEmitter.prototype.removeListener">
+        function <span class="apidocSignatureSpan">node-mocks-http.mockEventEmitter.prototype.</span>removeListener
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeListener = function () {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-mocks-http.mockEventEmitter.prototype.setMaxListeners" id="apidoc.element.node-mocks-http.mockEventEmitter.prototype.setMaxListeners">
+        function <span class="apidocSignatureSpan">node-mocks-http.mockEventEmitter.prototype.</span>setMaxListeners
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setMaxListeners = function () {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-mocks-http.mockRequest" id="apidoc.module.node-mocks-http.mockRequest">module node-mocks-http.mockRequest</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-mocks-http.mockRequest.createRequest" id="apidoc.element.node-mocks-http.mockRequest.createRequest">
+        function <span class="apidocSignatureSpan">node-mocks-http.mockRequest.</span>createRequest
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createRequest(options) {
+
+    if (!options) {
+        options = {};
+    }
+
+    if (options.eventEmitter) {
+        EventEmitter = options.eventEmitter;
+    }
+
+    // create mockRequest
+    var mockRequest = Object.create(EventEmitter.prototype);
+    EventEmitter.call(mockRequest);
+
+    mockRequest.method = options.method ? options.method : &#x27;GET&#x27;;
+    mockRequest.url = options.url || options.path || &#x27;&#x27;;
+    mockRequest.originalUrl = options.originalUrl || mockRequest.url;
+    mockRequest.path = options.path ||
+        ((options.url ? url.parse(options.url).pathname : &#x27;&#x27;));
+    mockRequest.params = options.params ? options.params : {};
+    if (options.session) {
+        mockRequest.session = options.session;
+    }
+    mockRequest.cookies = options.cookies ? options.cookies : {};
+    if (options.signedCookies) {
+        mockRequest.signedCookies = options.signedCookies;
+    }
+    mockRequest.headers = options.headers ? convertKeysToLowerCase(options.headers) : {};
+    mockRequest.body = options.body ? options.body : {};
+    mockRequest.query = options.query ? options.query : {};
+    mockRequest.files = options.files ? options.files : {};
+
+    //parse query string from url to object
+    if (Object.keys(mockRequest.query).length === 0) {
+        mockRequest.query = require(&#x27;querystring&#x27;).parse(mockRequest.url.split(&#x27;?&#x27;)[1]);
+
+        if (!mockRequest.query.hasOwnProperty) {
+            Object.defineProperty(
+                mockRequest.query,
+                &#x27;hasOwnProperty&#x27;,
+                {
+                    enumerable: false,
+                    value: Object.hasOwnProperty.bind(mockRequest.query)
+                }
+            );
+        }
+    }
+
+    // attach any other provided objects into the request for more advanced testing
+    for (var n in options) {
+        if (standardRequestOptions.indexOf(n) === -1) {
+            mockRequest[n] = options[n];
+        }
+    }
+
+<span class="apidocCodeCommentSpan">    /**
+     * Return request header.
+     *
+     * The `Referrer` header field is special-cased,
+     * both `Referrer` and `Referer` are interchangeable.
+     *
+     * Examples:
+     *
+     *     mockRequest.get(&#x27;Content-Type&#x27;);
+     *     // =&#x3e; &#x22;text/plain&#x22;
+     *
+     *     mockRequest.get(&#x27;content-type&#x27;);
+     *     // =&#x3e; &#x22;text/plain&#x22;
+     *
+     *     mockRequest.get(&#x27;Something&#x27;);
+     *     // =&#x3e; undefined
+     *
+     * Aliased as `mockRequest.header()`.
+     *
+     * @param {String} name
+     * @return {String}
+     * @api public
+     */
+</span>
+    mockRequest.get =
+    mockRequest.header = function(name) {
+        name = name.toLowerCase();
+        switch (name) {
+            case &#x27;referer&#x27;:
+            case &#x27;referrer&#x27;:
+                return mockRequest.headers.referrer || mockRequest.headers.referer;
+            default:
+                return mockRequest.headers[name];
+        }
+    };
+
+    /**
+     * Function: is
+     *
+     *   Checks for matching content types in the content-type header.
+     *   Requires a request body, identified by transfer-encoding or content-length headers
+     *
+     * Examples:
+     *
+     *     mockRequest.headers[&#x27;content-type&#x27;] = &#x27;text/html&#x27;;
+     *     mockRequest.headers[&#x27;transfer-encoding&#x27;] = &#x27;chunked&#x27;;
+     *     mockRequest.headers[&#x27;content-length&#x27;] = &#x27;100&#x27;;
+     *
+     *     mockRequest.is(&#x27;html&#x27;);
+     *     // =&#x3e; &#x22;html&#x22;
+     *
+     *     mockRequest.is(&#x27;json&#x27;);
+     *     // =&#x3e; false
+     *
+     *     mockRequest.is([&#x27;json&#x27;, &#x27;html&#x27;, &#x27;text&#x27;]);
+     *     // =&#x3e; &#x22;html&#x22;
+     *
+     * @param {String|String[]} types content type or array of types to match
+     * @return {String|false|null} Matching content type as string, false if no match, null if request has no body.
+     * @api public
+     */
+    mockRequest.is = function(types) {
+        if (!Array.isArray(types)) {
+            types = [].slice.call(arguments);
+        }
+        return typeis(mockRequest, types);
+    };
+
+    /**
+     * Function: accepts
+     *
+     *   Checks for matching content types in the Accept header.
+     *
+     * Examples:
+     *
+     *     mockRequest.headers[&#x27;accept&#x27;] = &#x27;application/json&#x27;
+     *
+     *     mockRequest.accepts(&#x27;j ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+You can easily test the `routeHandler` function with some code like
+this using the testing framework of your choice:
+
+```js
+exports[&#x27;routeHandler - Simple testing&#x27;] = function(test) {
+
+var request  = httpMocks.<span class="apidocCodeKeywordSpan">createRequest</span>({
+    method: &#x27;GET&#x27;,
+    url: &#x27;/user/42&#x27;,
+    params: {
+      id: 42
+    }
+});
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-mocks-http.mockResponse" id="apidoc.module.node-mocks-http.mockResponse">module node-mocks-http.mockResponse</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-mocks-http.mockResponse.createResponse" id="apidoc.element.node-mocks-http.mockResponse.createResponse">
+        function <span class="apidocSignatureSpan">node-mocks-http.mockResponse.</span>createResponse
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createResponse(options) {
+
+    if (!options) {
+        options = {};
+    }
+
+    var _endCalled = false;
+    var _data = &#x27;&#x27;;
+    var _encoding = options.encoding;
+
+    var _redirectUrl = &#x27;&#x27;;
+    var _renderView = &#x27;&#x27;;
+    var _renderData = {};
+
+    if (options.writableStream) {
+        WritableStream = options.writableStream;
+    }
+    if (options.eventEmitter) {
+        EventEmitter = options.eventEmitter;
+    }
+    var writableStream = new WritableStream();
+
+    var mockRequest = options.req;
+    // create mockResponse
+
+    var mockResponse = Object.create(EventEmitter.prototype);
+    EventEmitter.call(mockResponse);
+
+    mockResponse._headers = {};
+
+    mockResponse.cookies = {};
+    mockResponse.finished = false;
+    mockResponse.headersSent = false;
+    mockResponse.statusCode = 200;
+    mockResponse.statusMessage = &#x27;OK&#x27;;
+
+    mockResponse.cookie = function(name, value, opt) {
+
+        mockResponse.cookies[name] = {
+            value: value,
+            options: opt
+        };
+
+        return this;
+    };
+
+    mockResponse.clearCookie = function(name) {
+        delete mockResponse.cookies[name];
+        return this;
+    };
+
+    mockResponse.status = function(code) {
+        mockResponse.statusCode = code;
+        return this;
+    };
+
+<span class="apidocCodeCommentSpan">    /**
+     * Function: writeHead
+     *
+     *  The &#x27;writeHead&#x27; function from node&#x27;s HTTP API.
+     *
+     * Parameters:
+     *
+     *  statusCode - A number to send as a the HTTP status
+     *  headers    - An object of properties that will be used for
+     *               the HTTP headers.
+     */
+</span>    mockResponse.writeHead = function(statusCode, statusMessage, headers) {
+
+        if (_endCalled) {
+            throw &#x27;The end() method has already been called.&#x27;;
+        }
+
+        if (mockResponse.headersSent) {
+            // Node docs: &#x22;This method must only be called once on a message&#x22;
+            // but it doesn&#x27;t error if you do call it after first chunk of body is sent
+            // so we shouldn&#x27;t throw here either (although it&#x27;s a bug in the code).
+            // We return without updating since in real life it&#x27;s just possible the double call didn&#x27;t
+            // completely corrupt the response (for example not using chunked encoding due to HTTP/1.0 client)
+            // and in this case the client will see the _original_ headers.
+            return;
+        }
+
+        mockResponse.statusCode = statusCode;
+
+        // resolve statusMessage and headers as optional
+        if (Object.prototype.toString.call(statusMessage) === &#x27;[object Object]&#x27;) {
+            headers = statusMessage;
+            statusMessage = null;
+        }
+
+        if (statusMessage) {
+            mockResponse.statusMessage = statusMessage;
+        }
+
+        // The headers specified earlier (been set with `mockResponse.setHeader`)
+        // should not be overwritten but be merged with the headers
+        // passed into `mockResponse.writeHead`.
+        if (headers) {
+            Object.assign(mockResponse._headers, headers);
+        }
+
+    };
+
+    /**
+     *  The &#x27;send&#x27; function from restify&#x27;s Response API that returns data
+     *  to the client. Can be called multiple times.
+     *
+     *  @see http://mcavage.me/node-restify/#response-api
+     *
+     * @param data The data to return. Must be a string.
+     */
+    mockResponse.send = function(a, b, c) {
+
+        var _formatData = function(data) {
+
+            if (typeof data === &#x27;object&#x27;) {
+
+                if (data.statusCode) {
+                    mockResponse.statusCode = data.statusCode;
+                } else if (data.httpCode) {
+                    mockResponse.statusCode = data.httpCode;
+                }
+
+                if (data.body) {
+                    _data = data.body;
+                } else {
+                    _data = data;
+                }
+
+            } else {
+                _data += data;
+            }
+
+        };
+
+        switch (arguments.length) {
+            case 1:
+                if (typeof a === &#x27;number&#x27;) {
+                    mockResponse.statusCode = a;
+                } else {
+                    _formatData(a); ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    method: &#x27;GET&#x27;,
+    url: &#x27;/user/42&#x27;,
+    params: {
+      id: 42
+    }
+});
+
+var response = httpMocks.<span class="apidocCodeKeywordSpan">createResponse</span>();
+
+routeHandler(request, response);
+
+var data = JSON.parse( response._getData() );
+test.equal(&#x22;Bob Dog&#x22;, data.name);
+test.equal(42, data.age);
+test.equal(&#x22;bob@dog.com&#x22;, data.email);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-mocks-http.mockWritableStream" id="apidoc.module.node-mocks-http.mockWritableStream">module node-mocks-http.mockWritableStream</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-mocks-http.mockWritableStream.mockWritableStream" id="apidoc.element.node-mocks-http.mockWritableStream.mockWritableStream">
+        function <span class="apidocSignatureSpan">node-mocks-http.</span>mockWritableStream
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function WritableStream() {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-mocks-http.mockWritableStream.prototype" id="apidoc.module.node-mocks-http.mockWritableStream.prototype">module node-mocks-http.mockWritableStream.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-mocks-http.mockWritableStream.prototype.destroy" id="apidoc.element.node-mocks-http.mockWritableStream.prototype.destroy">
+        function <span class="apidocSignatureSpan">node-mocks-http.mockWritableStream.prototype.</span>destroy
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">destroy = function () {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-mocks-http.mockWritableStream.prototype.destroySoon" id="apidoc.element.node-mocks-http.mockWritableStream.prototype.destroySoon">
+        function <span class="apidocSignatureSpan">node-mocks-http.mockWritableStream.prototype.</span>destroySoon
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">destroySoon = function () {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-mocks-http.mockWritableStream.prototype.end" id="apidoc.element.node-mocks-http.mockWritableStream.prototype.end">
+        function <span class="apidocSignatureSpan">node-mocks-http.mockWritableStream.prototype.</span>end
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">end = function () {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        default:
+            break;
+    }
+
+    mockResponse.headersSent = true;
+
+    mockResponse.emit(&#x27;send&#x27;);
+    mockResponse.<span class="apidocCodeKeywordSpan">end</span>();
+
+};
+
+/**
+ * Send given HTTP status code.
+ *
+ * Sets the response status to `statusCode` and the body of the
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
