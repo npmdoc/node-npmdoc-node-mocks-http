@@ -117,6 +117,18 @@
 
         <li>
 
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-mocks-http.</span>_http_incoming</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-mocks-http.</span>http</span>
+
+        </li>
+
+        <li>
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-mocks-http.</span>mockEventEmitter.prototype</span>
 
         </li>
@@ -136,6 +148,56 @@
         <li>
 
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-mocks-http.</span>mockWritableStream.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-mocks-http._http_incoming">module node-mocks-http._http_incoming</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-mocks-http._http_incoming.IncomingMessage">
+            function <span class="apidocSignatureSpan">node-mocks-http._http_incoming.</span>IncomingMessage
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-mocks-http._http_incoming.readStart">
+            function <span class="apidocSignatureSpan">node-mocks-http._http_incoming.</span>readStart
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-mocks-http._http_incoming.readStop">
+            function <span class="apidocSignatureSpan">node-mocks-http._http_incoming.</span>readStop
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-mocks-http.http">module node-mocks-http.http</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-mocks-http.http.IncomingMessage">
+            function <span class="apidocSignatureSpan">node-mocks-http.http.</span>IncomingMessage
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-mocks-http.http.</span>STATUS_CODES</span>
 
         </li>
 
@@ -743,6 +805,128 @@ test.equal(&#x22;bob@dog.com&#x22;, data.email);
 
 
 
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-mocks-http._http_incoming" id="apidoc.module.node-mocks-http._http_incoming">module node-mocks-http._http_incoming</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-mocks-http._http_incoming.IncomingMessage" id="apidoc.element.node-mocks-http._http_incoming.IncomingMessage">
+        function <span class="apidocSignatureSpan">node-mocks-http._http_incoming.</span>IncomingMessage
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function IncomingMessage() {
+    Stream.Readable.call(this);
+
+    this.httpVersionMajor = null;
+    this.httpVersionMinor = null;
+    this.httpVersion = null;
+    this.complete = false;
+    this.headers = {};
+    this.rawHeaders = [];
+    this.trailers = {};
+    this.rawTrailers = [];
+
+    this.readable = true;
+
+    this._pendings = [];
+    this._pendingIndex = 0;
+    this.upgrade = null;
+
+    this.url = &#x27;&#x27;;
+    this.method = null;
+
+    this.statusCode = null;
+    this.statusMessage = null;
+
+    this._consuming = false;
+
+    this._dumped = false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-mocks-http._http_incoming.readStart" id="apidoc.element.node-mocks-http._http_incoming.readStart">
+        function <span class="apidocSignatureSpan">node-mocks-http._http_incoming.</span>readStart
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function readStart() {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-mocks-http._http_incoming.readStop" id="apidoc.element.node-mocks-http._http_incoming.readStop">
+        function <span class="apidocSignatureSpan">node-mocks-http._http_incoming.</span>readStop
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function readStop() {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-mocks-http.http" id="apidoc.module.node-mocks-http.http">module node-mocks-http.http</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-mocks-http.http.IncomingMessage" id="apidoc.element.node-mocks-http.http.IncomingMessage">
+        function <span class="apidocSignatureSpan">node-mocks-http.http.</span>IncomingMessage
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function IncomingMessage() {
+    Stream.Readable.call(this);
+
+    this.httpVersionMajor = null;
+    this.httpVersionMinor = null;
+    this.httpVersion = null;
+    this.complete = false;
+    this.headers = {};
+    this.rawHeaders = [];
+    this.trailers = {};
+    this.rawTrailers = [];
+
+    this.readable = true;
+
+    this._pendings = [];
+    this._pendingIndex = 0;
+    this.upgrade = null;
+
+    this.url = &#x27;&#x27;;
+    this.method = null;
+
+    this.statusCode = null;
+    this.statusMessage = null;
+
+    this._consuming = false;
+
+    this._dumped = false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
 
 
 
